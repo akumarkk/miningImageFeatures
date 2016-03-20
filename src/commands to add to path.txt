@@ -1,0 +1,4 @@
+export PATH=$PATH:/home/sahithi/opt/opencv/release/lib/
+
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
+
