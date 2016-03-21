@@ -29,6 +29,7 @@ def imageHistograms():
     greyImages = []
     imgArray = []
     for img_file in images:
+        print "processing image = ", img_file
         img = cv2.imread(img_file)
         img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
         imgHist = cv2.calcHist([img],[0],None,[256],[0,256])
