@@ -4,6 +4,9 @@ import os
 import scandir
 import numpy as np
 
+# All global variables
+images = []
+
 def print_image(image):
     count = 0
     
@@ -15,7 +18,8 @@ def print_image(image):
 
 
 def imageHistograms():
-    images = []
+    global images
+
     for file in scandir.scandir('../../testDataSet/'):
         if file.is_file():
             images.append(file.path)
@@ -40,6 +44,8 @@ def imageHistograms():
     return imgArray
 
 def kmeanClustering(inputImages):
+    global images
+    centerToImageMap = {}
     k = 4
 
     print "In kmeanClustering ..."
@@ -51,11 +57,32 @@ def kmeanClustering(inputImages):
 
     print "K-MEANS Center   =   ", center
     print "ret              =   ", ret
-    print "Lable            =   ", label
-    print "len(Lable)            =   ", len(label)
+    print "Label            =   ", label
+    print "len(Label)            =   ", len(label)
+
+    idx = 0
+    while idx < len(label):
+        if label[idx][0] in centerToImageMap:
+            centerToImageMap[label[idx][0]].append(images[idx])
+        else:
+            centerToImageMap[label[idx][0]] = [images[idx]]
+
+        idx += 1
+
+    return centerToImageMap
+
+def clusterImages(centerToImageMap):
+    print centerToImageMap
+
+    for center in centerToImageMap:
+        if not os.path.exists(str(center)):
+            os.makedirs(str(center))
+
+        for fileName in centerToImageMap[center]:
+            srcFile = fileName
+            dstFile = str(center) + '/'
+            os.system('cp '+ srcFile + ' ' + dstFile)
     
-
-
 
 
 img = cv2.imread('home.jpg')
@@ -66,5 +93,6 @@ print "Type(img)    =   ", type(img)
 cv2.imwrite( "grey.png", img )
 
 processedImg = imageHistograms()
-kmeanClustering(processedImg)
+clusterMap = kmeanClustering(processedImg)
+clusterImages(clusterMap)
 
