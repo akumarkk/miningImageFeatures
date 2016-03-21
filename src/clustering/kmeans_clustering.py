@@ -85,13 +85,6 @@ def clusterImages(centerToImageMap):
     
 
 
-img = cv2.imread('home.jpg')
-print "Image = ", img
-img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-print "Grey Image   =   ", img
-print "Type(img)    =   ", type(img)
-cv2.imwrite( "grey.png", img )
-
 processedImg = imageHistograms()
 clusterMap = kmeanClustering(processedImg)
 clusterImages(clusterMap)
