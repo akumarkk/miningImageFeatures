@@ -20,7 +20,7 @@ def print_image(image):
 def imageHistograms():
     global images
 
-    for file in scandir.scandir('../../testDataSet/'):
+    for file in scandir.scandir('../../dataSets/'):
         if file.is_file():
             images.append(file.path)
 
@@ -84,13 +84,6 @@ def clusterImages(centerToImageMap):
             os.system('cp '+ srcFile + ' ' + dstFile)
     
 
-
-img = cv2.imread('home.jpg')
-print "Image = ", img
-img = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-print "Grey Image   =   ", img
-print "Type(img)    =   ", type(img)
-cv2.imwrite( "grey.png", img )
 
 processedImg = imageHistograms()
 clusterMap = kmeanClustering(processedImg)
