@@ -12,7 +12,7 @@ sys.path.append('/usr/local/lib/python2.7/dist-packages/')
 def imageDistance(imgName1, imgName2, link=1):# returns distance between 2 images
 	img1 = cv2.imread(imgName1)
 	img2 = cv2.imread(imgName2)
-	if img1==None or img2==None:
+	if img1 is None or img2 is None:
 		print "Images not found", type(img1), imgName1, type(img2), imgName2
 		exit(0)
 	gray1= cv2.cvtColor(img1,cv2.COLOR_BGR2GRAY)
