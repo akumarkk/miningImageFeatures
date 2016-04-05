@@ -130,7 +130,7 @@ def clusterImages(centerToImageMap):
 
 
 def main():
-	points,c1=files("DataSet/data/*")
+	points,c1=files("../../dataSets/*")
 	k=3
 	centers= Gonzalez(k,points,c1)
 #	for x in centers:
