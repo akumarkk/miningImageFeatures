@@ -126,6 +126,7 @@ def clusterImages(centerToImageMap):
         for fileName in centerToImageMap[center]:
             srcFile = fileName
             dstFile = str(center) + '/'
+            print srcFile
             os.system('cp \"'+ srcFile + '\" ' + dstFile)
 
 

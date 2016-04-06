@@ -1,0 +1,29 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/sahithi/Dropbox/Spring 2016/Data Mining/project/src/miningImageFeatures/src/nnWorkspace/.metadata/.plugins/org.eclipse.core.resources/.projects/nn/com.python.pydev.analysis/v2_indexcache
+nn|1459927717531773000|/home/sahithi/Dropbox/Spring 2016/Data Mining/project/src/miningImageFeatures/src/nnWorkspace/nn/nn.py
+close|1459923702194905000|/home/sahithi/Dropbox/Spring 2016/Data Mining/project/src/miningImageFeatures/src/nnWorkspace/nn/close.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=nn
+2=close
+-- END DICTIONARY
+-- START TREE 1
+12
+cen|1|centers!11@
+clu|3|clusterImages!10@clusterImages!18@clusters!11@
+com|2|compare!10@compare!18@
+dis|1|distancesList!11@
+fau|1|fault!11@
+fil|2|files!18@files!10@
+gon|2|Gonzalez!10@Gonzalez!18@
+ima|2|imageDistance!18@imageDistance!10@
+k|1|k!11@
+llo|2|lloyds!10@lloyds!18@
+mai|1|main!18@
+tem|1|tempDict!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE
