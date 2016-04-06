@@ -20,7 +20,7 @@ def imageDistance(imgName1, imgName2, link=1):# returns distance between 2 image
     sift = cv2.xfeatures2d.SIFT_create()
     kp1, des1 = sift.detectAndCompute(gray1,None)
     kp2, des2 = sift.detectAndCompute(gray2,None)
-    bf = cv2.BFMatcher(cv2.NORM_L2)
+    bf = cv2.BFMatcher(cv2.NORM_L2,crossCheck=True)
     matches = bf.match(des1,des2)
     
     sum = 0
