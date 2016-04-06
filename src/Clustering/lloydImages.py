@@ -106,13 +106,16 @@ def lloyds(centers, points): # centers is a list of center image. points is a li
 		
 		newCenters=[]
 		minDist=9999999999
+		center=''
 		for c in clusters:
-			for pt in c:
-				xsum+=pt['x']
-				ysum+=pt['y']
-			xavg=xsum/len(c)
-			yavg=ysum/len(c)
-			newCenters.append({'x':xavg, 'y':yavg})
+			for pt1 in c:
+				sumDist = 0
+				for pt2 in c:
+					sumDist+= numpy.power(imageDistance(pt1,pt2))
+				if minDist>sumDist:
+					minDist=sumDist
+					center=pt1
+			newCenters.append(pt1)
 	
 	return centers, clusters
 
@@ -134,6 +137,7 @@ def main():
 	points,c1=files("../../dataSets/*")
 	k=3
 	centers= Gonzalez(k,points,c1)
+	lloyds(centers,points)
 #	for x in centers:
 #		print x
 
