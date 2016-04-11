@@ -91,3 +91,6 @@ libopencv_videostab_pch_dephelp|/home/sahithi/opt/opencv/release/lib/libopencv_v
 libopencv_xfeatures2d_pch_dephelp|/home/sahithi/opt/opencv/release/lib/libopencv_xfeatures2d_pch_dephelp.a
 libopencv_ximgproc_pch_dephelp|/home/sahithi/opt/opencv/release/lib/libopencv_ximgproc_pch_dephelp.a
 libopencv_xobjdetect_pch_dephelp|/home/sahithi/opt/opencv/release/lib/libopencv_xobjdetect_pch_dephelp.a
+nn|/home/sahithi/Dropbox/Spring 2016/Data Mining/project/src/miningImageFeatures/src/nnWorkspace/nn/nn.py
+nn2|/home/sahithi/Dropbox/Spring 2016/Data Mining/project/src/miningImageFeatures/src/nnWorkspace/nn/nn2.py
+nn3|/home/sahithi/Dropbox/Spring 2016/Data Mining/project/src/miningImageFeatures/src/nnWorkspace/nn/nn3.py
