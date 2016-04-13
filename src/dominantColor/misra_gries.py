@@ -89,7 +89,7 @@ def misragries(s, k):
 
 
 print "*************** processing SET1 ******************"
-s1 = readInput("red.jpg")
+s1 = readInput("apple.jpg")
 for k in range(1, 5):
     print "******************* k = ", k, "**********************"
     colors = misragries(s1, k)
