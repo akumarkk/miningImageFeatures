@@ -5,7 +5,7 @@ def readInput(inputFile):
 
     s = []
     image = cv2.imread(inputFile)
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     image = image.reshape((image.shape[0] * image.shape[1], 3))
 
     image = [ tuple(pixel) for pixel in image ]
@@ -34,11 +34,18 @@ def plot_colors(colors):
     # each cluster
 
     percent = 100/(len(colors))
-    for color in colors:
-            # plot the relative percentage of each cluster
-            endX = startX + (percent * 300)
-            cv2.rectangle(bar, (int(startX), 0), (int(endX), 50), (228, 40, 39), -1)
-            startX = endX
+    for clr in colors:
+        print "processing color = ", clr, type(clr)
+        # plot the relative percentage of each cluster
+        endX = startX + (percent * 300)
+        #color=(clr[0], clr[1], clr[2])
+        #recColor = np.array(clr, dtype=np.int32)
+        #print recColor, type(recColor)
+        x,y,z = clr
+
+        print x,y,z, clr
+        cv2.rectangle(bar, (int(startX), 0), (int(endX), 50), (x, y, z), -1)
+        startX = endX
     cv2.imwrite("dominantColors.jpg", bar)
     # return the bar chart
     return bar
@@ -83,9 +90,10 @@ def misragries(s, k):
 
 print "*************** processing SET1 ******************"
 s1 = readInput("red.jpg")
-for k in range(1, 3):
+for k in range(1, 5):
     print "******************* k = ", k, "**********************"
     colors = misragries(s1, k)
-    plot_colors(colors)
+    print colors
+    #plot_colors(colors)
 
 
