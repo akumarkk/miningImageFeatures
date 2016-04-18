@@ -20,7 +20,7 @@ def print_image(image):
 def imageHistograms():
     global images
 
-    for file in scandir.scandir('../../dataSets/'):
+    for file in scandir.scandir('./dataSet/'):
         if file.is_file():
             images.append(file.path)
 
@@ -47,7 +47,7 @@ def imageHistograms():
 def kmeanClustering(inputImages):
     global images
     centerToImageMap = {}
-    k = 5 
+    k = 3 
 
     print "In kmeanClustering ..."
     print inputImages
